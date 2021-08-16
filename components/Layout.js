@@ -1,7 +1,6 @@
 import Head from "next/head"
 import Link from "next/link"
 import Image from 'next/image'
-import styles from  '../styles/Home.module.scss'
 
 const Layout = (props) => {
   const { title, children } = props
@@ -24,7 +23,7 @@ const Layout = (props) => {
         
         <main>
           {title ? <h1 className="page-title">{title}</h1> : ``}
-          <div className="page-main">
+          <div className="page_main">
             {children}
           </div>
         </main>
