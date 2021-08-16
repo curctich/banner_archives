@@ -1,16 +1,28 @@
-import Layout from "../components/Layout"
 import Link from 'next/link'
+import Image from 'next/image'
+
+import Layout from "../components/Layout"
+
+import styles from '../styles/layouts/layouts.module.scss'
+import gallery from '../styles/component/gallery.module.scss'
+import card from '../styles/component/card.module.scss'
+
 
 export default function Home({ banners }) {
   return (
       <Layout>
-        <div>
-          <ul>
+        <div className={styles.l_inner}>
+          <ul className={gallery.c_gallery}>
             {banners.map((archive) => (
-                <li key={archive.id}>
+                <li key={archive.id} className={card.c_card}>
                   <Link href={`/${archive.id}`}>
-                    <a>{archive.title}</a>
+                    <a>
+                      <div className={card.c_card__img}>
+                        <Image src={`${archive.img}`} alt="" width={255} height={255} objectFit="contain" />
+                      </div>
+                    </a>
                   </Link>
+                  <p className={card.c_card__ttl}>{archive.title}</p>
                 </li>
             ))}
           </ul>
@@ -29,33 +41,23 @@ export const getStaticProps = async () => {
       banners: [
         {
           id: 1,
-          title: 'test1',
-          url: 'https://placehold.jp/150x150.png'
+          title: 'サイト名/バナー名',
+          img: '/assets/bnr_01.png'
         },
         {
           id: 2,
-          title: 'test2',
-          url: 'https://placehold.jp/150x150.png'
+          title: 'サイト名/バナー名',
+          img: '/assets/bnr_02.png'
         },
         {
           id: 3,
-          title: 'test3',
-          url: 'https://placehold.jp/150x150.png'
+          title: 'サイト名/バナー名',
+          img: '/assets/bnr_03.jpeg'
         },
         {
           id: 4,
-          title: 'test4',
-          url: 'https://placehold.jp/150x150.png'
-        },
-        {
-          id: 5,
-          title: 'test5',
-          url: 'https://placehold.jp/150x150.png'
-        },
-        {
-          id: 6,
-          title: 'test6',
-          url: 'https://placehold.jp/150x150.png'
+          title: 'サイト名/バナー名',
+          img: '/assets/bnr_04.jpg'
         },
       ]
     },
