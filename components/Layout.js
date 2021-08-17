@@ -2,6 +2,8 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from 'next/image'
 
+import header from '../styles/layouts/header.module.scss'
+
 const Layout = (props) => {
   const { title, children } = props
   const siteTitle = "Banner Archives"
@@ -13,8 +15,8 @@ const Layout = (props) => {
           <link rel="icon" href="favicon.ico" />
         </Head>
         
-        <header>
-          <h1 className={styles.site_title}>
+        <header className={header.l_header}>
+          <h1 className="site_title">
             <Link href="/">
               <a>{siteTitle}</a>
             </Link>
