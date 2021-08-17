@@ -5,7 +5,7 @@ import Layout from "../components/Layout"
 
 import styles from '../styles/layouts/layouts.module.scss'
 import gallery from '../styles/component/gallery.module.scss'
-import card from '../styles/component/card.module.scss'
+import post from '../styles/component/post.module.scss'
 
 
 export default function Home({ banners }) {
@@ -14,15 +14,15 @@ export default function Home({ banners }) {
         <div className={styles.l_inner}>
           <ul className={gallery.c_gallery}>
             {banners.map((archive) => (
-                <li key={archive.id} className={card.c_card}>
+                <li key={archive.id} className={post.c_post}>
                   <Link href={`/${archive.id}`}>
                     <a>
-                      <div className={card.c_card__img}>
+                      <div className={post.c_post__img}>
                         <Image src={`${archive.img}`} alt="" width={255} height={255} objectFit="contain" />
                       </div>
                     </a>
                   </Link>
-                  <p className={card.c_card__ttl}>{archive.title}</p>
+                  <p className={post.c_post__ttl}>{archive.title}</p>
                 </li>
             ))}
           </ul>
