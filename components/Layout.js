@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from 'next/image'
 
 import header from '../styles/layouts/header.module.scss'
+import footer from '../styles/layouts/footer.module.scss'
 
 const Layout = (props) => {
   const { title, children } = props
@@ -30,7 +31,7 @@ const Layout = (props) => {
           </div>
         </main>
         
-        <footer>
+        <footer className={footer.l_footer}>
           &copy; {siteTitle}
           <span className="logo">
              <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
