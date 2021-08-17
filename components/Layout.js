@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from 'next/image'
 
 import header from '../styles/layouts/header.module.scss'
+import layouts from '../styles/layouts/layouts.module.scss'
 import footer from '../styles/layouts/footer.module.scss'
 
 const Layout = (props) => {
@@ -17,16 +18,17 @@ const Layout = (props) => {
         </Head>
         
         <header className={header.l_header}>
-          <h1 className="site_title">
-            <Link href="/">
-              <a>{siteTitle}</a>
-            </Link>
-          </h1>
+          <div className={layouts.l_inner}>
+            <h1 className={header.l_header__ttl}>
+              <Link href="/">
+                <a>{siteTitle}</a>
+              </Link>
+            </h1>
+          </div>
         </header>
         
         <main>
-          {title ? <h1 className="page-title">{title}</h1> : ``}
-          <div className="page_main">
+          <div className={layouts.l_page_main}>
             {children}
           </div>
         </main>
