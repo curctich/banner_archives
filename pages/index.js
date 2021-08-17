@@ -3,15 +3,16 @@ import Image from 'next/image'
 
 import Layout from "../components/Layout"
 
-import styles from '../styles/layouts/layouts.module.scss'
+import layouts from '../styles/layouts/layouts.module.scss'
 import gallery from '../styles/component/gallery.module.scss'
 import post from '../styles/component/post.module.scss'
+import tag from '../styles/component/tag.module.scss'
 
 
 export default function Home({ banners }) {
   return (
       <Layout>
-        <div className={styles.l_inner}>
+        <div className={layouts.l_inner}>
           <ul className={gallery.c_gallery}>
             {banners.map((archive) => (
                 <li key={archive.id} className={post.c_post}>
@@ -22,7 +23,32 @@ export default function Home({ banners }) {
                       </div>
                     </a>
                   </Link>
-                  <p className={post.c_post__ttl}>{archive.title}</p>
+                  <div className={post.c_post__content}>
+                    <p className={post.c_post__ttl}>{archive.title}</p>
+                    <p className={post.c_post__size}>{archive.size}</p>
+                    <ul className={post.c_post__tag}>
+                      <li className={tag.c_tag}>
+                        <a href="#">
+                          <span className={tag.c_tag__ttl}>イベント</span>
+                        </a>
+                      </li>
+                      <li className={tag.c_tag}>
+                        <a href="#">
+                          <span className={tag.c_tag__ttl}>ネットサービス</span>
+                        </a>
+                      </li>
+                      <li className={tag.c_tag}>
+                        <a href="#">
+                          <span className={tag.c_tag__ttl}>スポーツ・健康</span>
+                        </a>
+                      </li>
+                      <li className={tag.c_tag}>
+                        <a href="#">
+                          <span className={tag.c_tag__ttl}>クリスマス</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
             ))}
           </ul>
@@ -41,23 +67,50 @@ export const getStaticProps = async () => {
       banners: [
         {
           id: 1,
+          img: '/assets/bnr_01.png',
           title: 'サイト名/バナー名',
-          img: '/assets/bnr_01.png'
+          size: '300×200'
         },
         {
           id: 2,
+          img: '/assets/bnr_02.png',
           title: 'サイト名/バナー名',
-          img: '/assets/bnr_02.png'
+          size: '300×200'
         },
         {
           id: 3,
+          img: '/assets/bnr_03.jpeg',
           title: 'サイト名/バナー名',
-          img: '/assets/bnr_03.jpeg'
+          size: '500×250'
         },
         {
           id: 4,
+          img: '/assets/bnr_04.jpg',
           title: 'サイト名/バナー名',
-          img: '/assets/bnr_04.jpg'
+          size: '90×600'
+        },{
+          id: 5,
+          img: '/assets/bnr_01.png',
+          title: 'サイト名/バナー名',
+          size: '300×200'
+        },
+        {
+          id: 6,
+          img: '/assets/bnr_02.png',
+          title: 'サイト名/バナー名',
+          size: '300×200'
+        },
+        {
+          id: 7,
+          img: '/assets/bnr_03.jpeg',
+          title: 'サイト名/バナー名',
+          size: '500×250'
+        },
+        {
+          id: 8,
+          img: '/assets/bnr_04.jpg',
+          title: 'サイト名/バナー名',
+          size: '90×600'
         },
       ]
     },
