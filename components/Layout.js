@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 import header from '../styles/layouts/header.module.scss'
 import layouts from '../styles/layouts/layouts.module.scss'
+import nav from '../styles/layouts/nav.module.scss'
 import footer from '../styles/layouts/footer.module.scss'
 
 const Layout = (props) => {
