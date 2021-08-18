@@ -1,6 +1,9 @@
+@use '../variables.scss';
+
 .c_post {
   position: relative;
-  width: calc(100% / 4);
+  width: 100%;
+  max-width: 285px;
   height: 100%;
   padding: 30px 10px;
 }
@@ -9,6 +12,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 285px;
   height: 100%;
   padding: 15px;
   background-color: #fafafa;
