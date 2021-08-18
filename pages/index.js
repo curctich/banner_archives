@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import Layout from "../components/Layout"
 
+import Masonry from 'react-masonry-css'
 import layouts from '../styles/layouts/layouts.module.scss'
 import gallery from '../styles/component/gallery.module.scss'
 import post from '../styles/component/post.module.scss'
@@ -10,12 +11,20 @@ import tag from '../styles/component/tag.module.scss'
 
 
 export default function Home({ banners }) {
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
   return (
       <Layout>
         <div className={layouts.l_inner}>
-          <ul className={gallery.c_gallery}>
+          <Masonry breakpointCols={breakpointColumnsObj}
+                   className={gallery.c_gallery}
+                   columnClassName={post.c_post}>
             {banners.map((archive) => (
-                <li key={archive.id} className={post.c_post}>
+                <div key={archive.id}>
                   <Link href={`/${archive.id}`}>
                     <a>
                       <div className={post.c_post__img}>
@@ -49,9 +58,9 @@ export default function Home({ banners }) {
                       </li>
                     </ul>
                   </div>
-                </li>
+                </div>
             ))}
-          </ul>
+          </Masonry>
         </div>
       </Layout>
   );
