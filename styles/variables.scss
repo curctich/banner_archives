@@ -6,7 +6,7 @@ $breakpoints: (
 ) !default;
 
 @mixin mq($breakpoint: md) {
-  @media screen and #{map-get($breakpoints, $breakpoint)} {
+  @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
-}K
+}
