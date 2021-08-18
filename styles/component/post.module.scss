@@ -1,4 +1,4 @@
-@use '../variables.scss';
+@use '../variables';
 
 .c_post {
   position: relative;
@@ -15,7 +15,7 @@
   max-width: 285px;
   height: 100%;
   padding: 15px;
-  background-color: #fafafa;
+  background-color: var(--c-post-bg);
 }
 .c_post__content {
   margin: 10px 0 0;
