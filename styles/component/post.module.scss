@@ -3,18 +3,19 @@
 .c_post {
   position: relative;
   width: 100%;
-  max-width: 285px;
+  max-width: 360px;
   height: 100%;
-  padding: 30px 10px;
+  padding: 0 20px;
+  margin-bottom: 70px;
 }
 .c_post__img {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 285px;
+  max-width: 360px;
   height: 100%;
-  padding: 15px;
+  padding: 30px;
   background-color: var(--c-post-bg);
 }
 .c_post__content {
@@ -31,6 +32,6 @@
 .c_post__tag {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -5px 10px;
+  margin: 0 -5px;
   font-size: 1.4em;
 }
