@@ -16,6 +16,7 @@ const Layout = (props) => {
         <Head>
           <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
           <link rel="icon" href="favicon.ico" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&display=swap" />
         </Head>
         
         <header className={header.l_header}>
