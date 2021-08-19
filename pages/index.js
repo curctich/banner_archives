@@ -20,10 +20,9 @@ export default function Home({ banners }) {
       <Layout>
         <div className={layouts.l_inner}>
           <Masonry breakpointCols={breakpointColumnsObj}
-                   className={gallery.c_gallery}
-                   columnClassName={post.c_post}>
+                   className={gallery.c_gallery}>
             {banners.map((archive) => (
-                <div key={archive.id}>
+                <div key={archive.id} className={post.c_post} >
                   <Link href={`/${archive.id}`}>
                     <a>
                       <div className={post.c_post__img}>
